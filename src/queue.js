@@ -27,7 +27,7 @@ class Queue {
     enqueue(value) {
         let node = new ListNode(value)
 
-        if (this.length === 0) {
+        if (this.length === null) {
             this.head = node
         } else {
             let current = this.head
@@ -43,9 +43,11 @@ class Queue {
     }
 
     dequeue() {
+        if (this.head === null) return null
         let current = this.head
         this.head = current.next
         this.length--
+        return 1
     }
 }
 
