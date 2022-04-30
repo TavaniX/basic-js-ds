@@ -25,7 +25,7 @@ const { ListNode } = require('../extensions/list-node.js')
 
 function removeKFromList(list, elem) {
     if (list.value === elem) {
-        list = null
+        list = list.next
     }
 
     let current = list
