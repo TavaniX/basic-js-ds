@@ -15,9 +15,17 @@ class BinarySearchTree {
         return this.parentNode
     }
 
-    add(/* data */) {
-        throw new NotImplementedError('Not implemented')
-        // remove line with error and write your code here
+    add(data) {
+        function pasteNode(node, data) {
+            if (!node) return new Node(data)
+            if (node.data === data) return node
+
+            data < node.data
+                ? (node.left = pasteNode(node.left, data))
+                : (node.right = pasteNode(node.right, data))
+            return node
+        }
+        this.parentNode = pasteNode(this.parentNode, data)
     }
 
     has(/* data */) {
